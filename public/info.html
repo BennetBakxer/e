@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="main.css">
+    <script async="" src="https://buttons-config.sharethis.com/js/6433be364f61b7001240a339.js"></script>
+    <script type="text/javascript" async=""
+        src="https://www.gstatic.com/recaptcha/releases/vjbW55W42X033PfTdVf6Ft4q/recaptcha__en.js"
+        crossorigin="anonymous"
+        integrity="sha384-jqt/W+w17r4O2YInpGAzsGqUkWuFwLH1iwGKOM8Z//8l09d6UkRjn4GYUmr6Agro"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #33061a;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .footer-links {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #8a8787;
+        }
+
+        .footer-description {
+            margin: 20px 0;
+            color: #ffffff;
+        }
+
+        .copyright {
+            color: #ffffff;
+        }
+
+        @media (max-width: 767px) {
+            #search {
+                display: none;
+            }
+
+            #search-bar {
+                display: none;
+                width: 100%;
+                padding: 10px;
+                background-color: #270414;
+                position: absolute;
+                top: 60px;
+                /* Adjust this value based on the height of your header */
+                left: 0;
+                right: 0;
+                z-index: 999;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #search-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header" style="background-color: #270414;">
+        <div class="container">
+            <div id="mobile_search"><i class="fa fa-search"></i></div>
+            <a href="/" id="logo" title="DopeBox.net">
+                <img src="logo.png" alt="Logo">
+                <div class="clearfix"></div>
+            </a>
+            <div id="search">
+                <div class="search-content">
+                    <form class="search-form" action="/search.html" method="get"
+                        style="background: rgba(255, 255, 255, 1); border-radius: 25px; padding: 0px;">
+                        <div class="search-icon" style="display: inline-block; vertical-align: middle;">
+                            <i class="fa fa-search" id="search-toggle"
+                                style="color: black; cursor: pointer;"></i>
+                        </div>
+                        <input type="text" autocomplete="off" name="s" placeholder="Enter keywords..."
+                            class="form-control search-input"
+                            style="border: none; background: transparent; margin-left: 2rem; outline: none; width: 120px; padding-left: 10px; color: black;">
+                    </form>
+                    <div class="nav search-result-pop search-suggest"></div>
+                </div>
+            </div>
+            <div id="search-bar" style="display: none;">
+                <form class="search-form" action="/search.html" method="get"
+                    style="background: rgba(255, 255, 255, 1); border-radius: 25px; padding: 0px;">
+                    <input type="text" autocomplete="off" name="s" placeholder="Enter keywords..."
+                        class="form-control search-input"
+                        style="border: none; background: transparent; padding-left: 10px; color: black; width: 100%;">
+                </form>
+            </div>
+
+            <div class="discord" id="header_right">
+                <div class="discord" id="header_login"><a class="discord"
+                        href="https://discord.gg/ZHakuEtVem"><img class="discord" style="height: 32px;"
+                            src="disco.png"></a></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12" style="height: 100%;">
+                <h1 id="animeTitle" class="text-white" style="margin-top: 2rem;">Anime Title</h1>
+                <iframe id="animeVideo" class="w-100" style="height: 650px;" src="" frameborder="0"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="row mt-3" style="margin-top: 10px;">
+            <div class="col-md-4">
+                <img id="animeImage" alt="Anime Image" class="img-fluid" style="margin-bottom: 10px;">
+            </div>
+            <div class="col-md-8">
+                <p class="text-white" style="margin-bottom: 10px;"><strong>Quality:</strong> <span
+                        id="animeQuality"></span></p>
+                <p class="text-white" style="margin-bottom: 10px;"><strong>Category:</strong> <span
+                        id="animeCategory"></span></p>
+                <p class="text-white" style="margin-bottom: 10px;"><strong>Release Date:</strong> <span
+                        id="animeReleaseDate"></span></p>
+                <p class="text-white" style="margin-bottom: 10px;"><strong>Description:</strong> <span
+                        id="animeDescription"></span></p>
+            </div>
+        </div>
+
+        <h3 class="text-white mt-5">Related Hentais</h3>
+        <div id="relatedHentais" class="row"></div>
+    </div>
+
+    <template id="item-template">
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+            <div class="flw-item" style="background-color: #2A0515;">
+                <div class="film-poster">
+                    <a class="film-poster-ahref">
+                        <img class="film-poster-img lazyload" alt="Loading...">
+                    </a>
+                </div>
+                <div class="film-detail">
+                    <div class="fd-infor">
+                        <span class="fdi-item"><strong>HD</strong></span>
+                        <span class="fdi-item">2024</span>
+                    </div>
+                    <h3 class="film-name" style="color: white;"><a></a></h3>
+                    <div style="background-color: #b94879;" class="fd-btn">
+                        <a style="background-color: #b94879;" class="btn btn-sm btn-play btn-secondary">
+                            <i style="color: white;" class="fas fa-play mr-3"></i><span style="color: white;">Watch
+                                now</span>
+                        </a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </template>
+
+    <div id="footer-about">
+        <div class="container" style="text-align: center;">
+            <div class="about-text" style="margin-bottom: 20px;">
+                EcchiBaka is a free hentai streaming site with zero ads. We let you watch hentai online without having
+                to register or pay, offering over 1,000 titles. You can also download full episodes from EcchiBaka and
+                watch them later if you want.
+            </div>
+            <div style="margin-bottom: 20px;">
+                <a href="tos.html" style="color: #ffffff; text-decoration: none; margin-right: 20px;">Terms of
+                    Service</a>
+                <a href="privacy.html" style="color: #ffffff; text-decoration: none;">Privacy Policy</a>
+            </div>
+            <p class="copyright" style="color: #ffffff;"><span id="currentYear"></span> EcchiBaka</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const animeTitleParam = params.get('title');
+
+            if (!animeTitleParam) {
+                console.error('No title parameter found in the URL.');
+                return;
+            }
+
+            const url = `/anime-details?title=${encodeURIComponent(animeTitleParam)}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('animeTitle').textContent = data.title;
+                    document.getElementById('animeImage').src = data.imageSrc;
+                    document.getElementById('animeQuality').textContent = data.quality;
+                    document.getElementById('animeCategory').textContent = data.category;
+                    document.getElementById('animeReleaseDate').textContent = data.releaseDate;
+                    document.getElementById('animeDescription').textContent = data.description;
+                    document.getElementById('animeVideo').src = `/proxy-video?url=${encodeURIComponent(data.videoUrl)}`;
+
+                    const relatedHentaisDiv = document.getElementById('relatedHentais');
+                    const template = document.getElementById('item-template').content;
+
+                    data.relatedHentais.forEach(item => {
+                        const clone = document.importNode(template, true);
+                        const image = clone.querySelector('.film-poster-img');
+                        const linkElement = clone.querySelector('.film-poster-ahref');
+                        const filmNameLink = clone.querySelector('.film-name a');
+                        const watchNowBtn = clone.querySelector('.btn-play');
+
+                        image.src = item.image;
+                        image.alt = item.title;
+                        linkElement.href = `info.html?title=${encodeURIComponent(item.title)}`;
+                        filmNameLink.href = `info.html?title=${encodeURIComponent(item.title)}`;
+                        filmNameLink.textContent = item.title;
+                        watchNowBtn.href = `info.html?title=${encodeURIComponent(item.title)}`;
+
+                        relatedHentaisDiv.appendChild(clone);
+                    });
+                })
+                .catch(error => console.error('Error fetching anime details:', error));
+        });
+    </script>
+        <script src="script.js"></script>
+
+</body>
+
+</html>

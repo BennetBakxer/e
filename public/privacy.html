@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .privacy-container {
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: white;
+        }
+
+        p,
+        li {
+            text-align: justify;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 10px;
+            }
+        }
+
+        #film-list a {
+            color: white !important;
+            /* Ensure white color overrides other styles */
+            text-decoration: none;
+            /* Optional: removes underline from links */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+
+            margin: 0;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .footer-links {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #8a8787;
+        }
+
+        .footer-description {
+            margin: 20px 0;
+            color: #ffffff;
+        }
+
+        .copyright {
+            color: #ffffff;
+        }
+
+        @media (max-width: 767px) {
+            #search {
+                display: none;
+            }
+
+            #search-bar {
+                display: none;
+                width: 100%;
+                padding: 10px;
+                background-color: #270414;
+                position: absolute;
+                top: 60px;
+                /* Adjust this value based on the height of your header */
+                left: 0;
+                right: 0;
+                z-index: 999;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #search-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header" style="background-color: #270414;">
+        <div class="container">
+            <div id="mobile_search"><i class="fa fa-search"></i></div>
+            <a href="/" id="logo" title="DopeBox.net">
+                <img src="logo.png" alt="Logo">
+                <div class="clearfix"></div>
+            </a>
+            <div id="search">
+                <div class="search-content">
+                    <form class="search-form" action="/search.html" method="get"
+                        style="background: rgba(255, 255, 255, 1); border-radius: 25px; padding: 0px;">
+                        <div class="search-icon" style="display: inline-block; vertical-align: middle;">
+                            <i class="fa fa-search" id="search-toggle" style="color: black; cursor: pointer;"></i>
+                        </div>
+                        <input type="text" autocomplete="off" name="s" placeholder="Enter keywords..."
+                            class="form-control search-input"
+                            style="border: none; background: transparent; margin-left: 2rem; outline: none; width: 120px; padding-left: 10px; color: black;">
+                    </form>
+                    <div class="nav search-result-pop search-suggest"></div>
+                </div>
+            </div>
+            <div id="search-bar" style="display: none;">
+                <form class="search-form" action="/search.html" method="get"
+                    style="background: rgba(255, 255, 255, 1); border-radius: 25px; padding: 0px;">
+                    <input type="text" autocomplete="off" name="s" placeholder="Enter keywords..."
+                        class="form-control search-input"
+                        style="border: none; background: transparent; padding-left: 10px; color: black; width: 100%;">
+                </form>
+            </div>
+
+            <div class="discord" id="header_right">
+                <div class="discord" id="header_login"><a class="discord" href="https://discord.gg/ZHakuEtVem"><img
+                            class="discord" style="height: 32px;" src="disco.png"></a></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="privacy-container" style="margin-top: 2rem;">
+        <h1>Privacy Policy</h1>
+        <p>This Privacy Policy describes how ecchiBaka ("we," "us," or "our") collects, uses, and shares personal
+            information obtained from users ("you" or "your") of our website, ecchiBaka, and any related services
+            (collectively, the "Services"). By accessing or using the Services, you agree to the terms of this Privacy
+            Policy.</p>
+
+        <h2>Information We Collect</h2>
+        <p>We may collect personal information about you in various ways, including:</p>
+        <ul>
+            <li><strong>Information You Provide:</strong> We may collect information that you voluntarily provide to us,
+                such as your name, email address, age, and any other information you choose to provide when you register
+                for an account, subscribe to our newsletter, or contact us.</li>
+            <li><strong>Automatically Collected Information:</strong> When you access or use the Services, we may
+                automatically collect certain information about your device and usage patterns, including your IP
+                address, browser type, operating system, and browsing activity.</li>
+            <li><strong>Cookies and Similar Technologies:</strong> We may use cookies, web beacons, and other tracking
+                technologies to collect information about your browsing behavior and preferences. Cookies are small
+                files stored on your device that allow us to recognize your device and personalize your experience.</li>
+        </ul>
+
+        <h2>Use of Information</h2>
+        <p>We may use the information we collect for various purposes, including to:</p>
+        <ul>
+            <li>Provide and improve the Services;</li>
+            <li>Customize your experience and content;</li>
+            <li>Communicate with you about the Services and respond to your inquiries;</li>
+            <li>Send you promotional materials and offers, where permitted by law;</li>
+            <li>Analyze trends and user demographics;</li>
+            <li>Detect, investigate, and prevent fraud and other illegal activities; and</li>
+            <li>Comply with legal and regulatory requirements.</li>
+        </ul>
+
+        <h2>Disclosure of Information</h2>
+        <p>We may share your personal information with third parties in the following circumstances:</p>
+        <ul>
+            <li>With your consent;</li>
+            <li>With service providers who perform services on our behalf, such as hosting, data analysis, and customer
+                support;</li>
+            <li>With our affiliates and business partners for their own marketing purposes, where permitted by law;</li>
+            <li>In response to legal process or a request from law enforcement or government authorities;</li>
+            <li>To protect our rights, property, or safety, or the rights, property, or safety of others; and</li>
+            <li>In connection with a corporate transaction, such as a merger, acquisition, or sale of assets.</li>
+        </ul>
+
+        <h2>Third-Party Content</h2>
+        <p>ecchiBaka may host third-party content, including hentai games, on its platform. We are not the creators or
+            owners of this third-party content, and we do not endorse or guarantee the accuracy, reliability, or
+            legality of such content. We disclaim any liability for any damages arising from your use of third-party
+            content hosted on ecchiBaka.</p>
+
+        <h2>Data Retention</h2>
+        <p>We will retain your personal information for as long as necessary to fulfill the purposes outlined in this
+            Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+
+        <h2>Your Rights and Choices</h2>
+        <p>Depending on your jurisdiction, you may have certain rights regarding your personal information, including
+            the right to:</p>
+        <ul>
+            <li>Access, update, or delete your personal information;</li>
+            <li>Object to the processing of your personal information;</li>
+            <li>Withdraw your consent to the processing of your personal information;</li>
+            <li>Opt-out of receiving marketing communications; and</li>
+            <li>Lodge a complaint with a supervisory authority.</li>
+        </ul>
+
+        <h2>Data Transfers</h2>
+        <p>We may transfer your personal information to countries outside of your jurisdiction for processing and
+            storage. We will take appropriate measures to ensure that such transfers comply with applicable data
+            protection laws.</p>
+
+        <h2>Security</h2>
+        <p>We take reasonable measures to protect the personal information we collect from unauthorized access, use, or
+            disclosure. However, no security measure is 100% effective, and we cannot guarantee absolute security.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>The Services are not intended for children under the age of 18, and we do not knowingly collect personal
+            information from children. If you believe that we have collected personal information from a child under 18,
+            please contact us immediately.</p>
+
+        <h2>Changes to this Privacy Policy</h2>
+        <p>We reserve the right to modify or update this Privacy Policy at any time. We will notify you of any material
+            changes by posting the revised policy on this page. Your continued use of the Services after the effective
+            date of the revised policy constitutes your acceptance of the changes.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us
+            at support@ecchibaka.com.</p>
+
+        <p>By accessing or using the Services, you acknowledge that you have read, understood, and agree to the terms of
+            this Privacy Policy. If you do not agree to these terms, you may not access or use the Services.</p>
+    </div>
+    <div id="footer-about">
+        <div class="container" style="text-align: center;">
+            <div class="about-text" style="margin-bottom: 20px;">
+                EcchiBaka is a free hentai streaming site with zero ads. We let you watch hentai online without having
+                to register or pay, offering over 1,000 titles. You can also download full episodes from EcchiBaka and
+                watch them later if you want.
+            </div>
+            <div style="margin-bottom: 20px;">
+                <a href="tos.html" style="color: #ffffff; text-decoration: none; margin-right: 20px;">Terms of
+                    Service</a>
+                <a href="privacy.html" style="color: #ffffff; text-decoration: none;">Privacy Policy</a>
+            </div>
+            <p class="copyright" style="color: #ffffff;"><span id="currentYear"></span> EcchiBaka</p>
+        </div>
+    </div>
+    <script>
+        var currentYear = new Date().getFullYear();
+        document.getElementById("currentYear").innerText = "©" + currentYear;
+    </script>
+    <script>
+        document.getElementById('mobile_search').addEventListener('click', function () {
+            var searchDiv = document.getElementById('search');
+            if (searchDiv.classList.contains('active')) {
+                searchDiv.classList.remove('active');
+            } else {
+                searchDiv.classList.add('active');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
